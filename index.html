@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio Website</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
+</head>
+<body>
+  <!-- 🔷 PROFILE CARD SECTION -->
+  <div class="profile-page">
+    <img src="images/hxa.jpg" alt="Humza's Profile"/>
+    <h1>Muhammad Humza Feroz</h1>
+    <h3>Web Developer</h3>
+
+    <div class="top-email">
+  📧 <a href="mailto:ferozhumza445@gmail.com">ferozhumza445@gmail.com</a>
+     </div>
+
+    <div class="social-media">
+      
+      <a href="https://www.linkedin.com/in/humza-feroz" target="_blank"><i class='bx bxl-linkedin'></i></a>
+      
+    </div>
+
+    <p>
+      Hi, I'm Humza a passionate Web Developer skilled in creating responsive and interactive websites using modern tools and technologies.
+    </p>
+
+    <div class="buttons">
+      <a href="cv/HAMZA FEROZ CV Resume-1.pdf" class="btn" download>Download CV</a>
+      <a href="#contact" class="btn">Contact Me</a>
+    </div>
+  </div>
+
+  <!-- ✅ SKILLS SECTION -->
+  <section class="skills-section" id="skills">
+    <h2>My Skills</h2>
+    <div class="rotating-skill-box">
+      <span class="static-text">💡</span>
+      <span class="dynamic-text" id="skill-text">HTML5</span>
+    </div>
+  </section>
+
+  <!-- ✅ CONTACT SECTION -->
+  <section id="contact" class="contact-section">
+    <h2>Contact Me</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- ✅ JS for rotating skills -->
+  <script>
+    const skills = [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Bootstrap",
+      "React.js",
+      "C# / ASP.NET",
+      "SQL DATABASE",
+      "Responsive Design"
+    ];
+
+    const skillText = document.getElementById("skill-text");
+    let index = 0;
+
+    setInterval(() => {
+      skillText.classList.remove("fade-in");
+      skillText.classList.add("fade-out");
+
+      setTimeout(() => {
+        index = (index + 1) % skills.length;
+        skillText.textContent = skills[index];
+        skillText.classList.remove("fade-out");
+        skillText.classList.add("fade-in");
+      }, 500);
+    }, 2000);
+  </script>
+</body>
+</html>
